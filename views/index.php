@@ -23,6 +23,30 @@
         </form>
       </div>
     </div>
+
+    <div class="page-header"><h4>List of Databases</h4></div>
+    <?php
+     include '../config/connection.php';
+     $query = mysql_query("show databases");
+     ?>
+     	<table class="table table-bordered">
+     	<tr>
+     		<th>Database Name</th>
+     		<th colspan="2">More Actions</th>
+     	</tr>
+     <?php
+     while($row = mysql_fetch_array($query))
+     {
+     	?>
+     		<tr>
+     			<td><?php echo $row['Database']; ?></td>
+     			<td><a href="">Drop</a></td>
+     			<td><a href="">Show Tables</a></td>
+     		</tr>
+     	 <?php
+     }
+     ?>
+      </table>
   </div>
 </body>
 </html>
