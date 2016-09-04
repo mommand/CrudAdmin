@@ -8,6 +8,20 @@
 <body>
   <div class="container">
     <div class="row" style="margin-top:60px;">
+     <?php
+       if(@$_GET['status'] == 'success')
+       {
+            echo '<div class="alert alert-success">Your Database Has been successfully Created</div>';
+       }
+       if(@$_GET['status'] == 'failur')
+       {
+          echo '<div class="alert alert-danger">Not Created Error</div>';
+       }
+       else
+       {
+        
+       }
+     ?>
       <div class="col-md-4 col-md-offset-4">
         <form action="../controller/dbcontroller.php" method="post">
         <fieldset>

@@ -1,6 +1,6 @@
 <?php
 
-		$connect = @mysql_connect("localhost","root","root") or die("Can not connection to mysql server");
+		include ('../config/connection.php');
 		if($connect)
 		{
 			$dbname = @$_POST['dbname'];
@@ -16,11 +16,11 @@
 					$run_query = mysql_query($query);
 					if($run_query)
 					{
-						echo "Database has been created";
+						header('location:../views/index.php?status=success');
 					}
 					else
 					{
-						echo mysql_error();
+						header('location:../views/index.php?status=failur');
 					}
 				}
 
