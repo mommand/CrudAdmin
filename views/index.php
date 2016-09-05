@@ -17,6 +17,15 @@
        {
           echo '<div class="alert alert-danger">Not Created Error</div>';
        }
+       if(@$_GET['status'] == 'drop-success')
+       {
+         $dbname = $_GET['dbname'];
+         echo '<div class="alert alert-success">'.$dbname. '  Database Has been successfully Droped</div>';
+       }
+       if(@$_GET['status'] == 'drop-failur')
+       {
+         echo '<div class="alert alert-danger">Has not been Droped!</div>';
+       }
        else
        {
         
@@ -54,8 +63,8 @@
      	?>
      		<tr>
      			<td><?php echo $row['Database']; ?></td>
-     			<td><a href="">Drop</a></td>
-     			<td><a href="">Show Tables</a></td>
+     			<td><a href="../controller/drop.php?dbname=<?php echo $row['Database']; ?>" onclick="return confirm('Do you Want To Drop this Database?');">Drop</a></td>
+     			<td><a href="../controller/showtables.php?dbname=<?php echo $row['Database'];?>">Show Tables</a></td>
      		</tr>
      	 <?php
      }
