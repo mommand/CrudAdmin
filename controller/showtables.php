@@ -19,8 +19,8 @@ if($run_query)
    	?>
       <tr>
       	<td><?php echo $rows[0]; ?></td>
-      	<td><a href="">Drop Table</a></td>
-      	<td><a href="">Describe Table</a></td>
+      	<td><a href="droptable.php?db=<?php echo $dbname; ?>&&tab=<?php echo $rows[0]; ?>">Drop Table</a></td>
+      	<td><a href="describetable.php?db=<?php echo $dbname; ?>&&tab=<?php echo $rows[0]; ?>">Describe Table</a></td>
       	<td><a href="">Browse table</a></td>
       </tr>
     <?php 
