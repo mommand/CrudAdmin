@@ -4,6 +4,7 @@
 	<title>News Upload</title>
 	<?php
 	  include('assets.php');
+	 
 	?>
 </head>
 <body>

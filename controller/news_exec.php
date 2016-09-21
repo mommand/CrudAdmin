@@ -1,5 +1,5 @@
 <?php
-include('../config/connection.php');
+  $connect = @mysql_connect("localhost","root","root") or die("Can not connection to mysql server");
 // select database
 mysql_select_db('newsup');
 // post data
@@ -15,7 +15,7 @@ $insert = "INSERT INTO news (id,title,author,location,category,content) VALUES (
 $run_insert_query = mysql_query($insert);
 if($run_insert_query)
 {
-	header('../views/newsupload.php?status=success');
+	header('location:../controller/news.php?status=success');
 }
 else
 {
