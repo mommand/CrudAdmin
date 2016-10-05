@@ -3,6 +3,7 @@
 <head>
 	<title>News Upload</title>
 	<?php
+      include('../config/mysqliConnect.php');
 	  include('assets.php');
 	 
 	?>
@@ -30,9 +31,22 @@
          	<div class="row form-group">
          	  <label for="cat">Category</label>
          	  <select name="cat" class="form-control">
-         	    <option>Please Select Category</option>
-         	    <option value="sport">Sport</option>
-         	    <option value="polictical">Political</option>
+              <option>Please Select Category</option>
+                <?php
+                    $cats = "SELECT * FROM categories";
+                    $run  = mysqli_query($conn,$cats);
+                    if(mysqli_num_rows($run) > 0)
+                    {
+                        while ($rows = mysqli_fetch_assoc($run)) {
+                            echo "<option value='$rows[id]'>"
+                            .$rows['name'].
+
+                            "</option>";
+                        }
+                    } 
+                 ?>
+         	    
+         	    
          	  	
          	  </select>
          	</div>
