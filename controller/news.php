@@ -1,3 +1,13 @@
+ <nav class="navbar navbar-inverse navbar-fixed">
+ <div class="container">
+   <ul class="nav navbar-nav navbar-right">
+      <li><a href="../views/register.php">Register</a></li>
+      <li><a href="">Login</a></li>
+      <li><a href=""></a></li>
+      
+   </ul>
+ </div>
+</nav> 
 <?php
 include('../config/mysqliConnect.php');
 include('../views/assets.php');
