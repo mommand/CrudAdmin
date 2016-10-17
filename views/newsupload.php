@@ -1,8 +1,13 @@
+<?php
+session_start();
+include('../controller/auth.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>News Upload</title>
 	<?php
+      
       include('../config/mysqliConnect.php');
 	  include('assets.php');
 	 
@@ -10,11 +15,25 @@
 </head>
 <body>
   <div class="page-header">
+  
     <h3 class="text-center">Upload News</h3>
+
   </div>
   <div class="container">
+  <?php
+   if(isset($_SESSION['fname']) && isset($_SESSION['lname']))
+   {
+      ?>
+         <div class="alert alert-success">
+             <p>Dear <?php echo $_SESSION['fname']." ". $_SESSION['lname'];  ?> You have Successfully loged in</p>
+         </div>
+      <?
+   }
+ ?>
      <div class="row">
+     <a href="../controller/logout.php" class="btn btn-primary pull-right">Logout</a>
        <div class="col-md-6 col-md-offset-3">
+
          <form action="../controller/news_exec.php" method="post">
          	<div class="row form-group">
          	   <label for="title">Title</label>
@@ -45,8 +64,6 @@
                         }
                     } 
                  ?>
-         	    
-         	    
          	  	
          	  </select>
          	</div>

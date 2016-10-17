@@ -19,10 +19,23 @@ include('assets.php');
       	 		</ul>
       	 	<?php
       	 }
+
+         session_destroy();
       	 echo "</div>";
       }
   ?>
-
+ 
+   <?php 
+      if(@$_GET['status'] == 'success')
+      {
+        ?>
+            <div class="alert alert-success">
+               <p>You have Successfully Registered Please <a href="login.php">Click here</a> To Login</p>
+            </div>
+        <?php
+      }
+   ?>
+ 
  <form action="../controller/register_exec.php" method="POST">
  	<div class="row form-group">
  		<label>First Name:</label>

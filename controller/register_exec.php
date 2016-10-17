@@ -25,9 +25,9 @@ if($email == '')
 	$arr[] = "Email is requied";
 	$flage = true;
 }
-if($password == '' || strlen($password) < 8)
+if($password == '')
 {
-	$arr[] = "The password field is required and max length is 8 characters";
+	$arr[] = "The password field is required ";
 	$flage= true;
  }
  if($rpass == '')
@@ -54,7 +54,7 @@ $q = "INSERT INTO users (id,fname,lname,email,password) VALUES(null,'$fname','$l
 $run_q = mysqli_query($conn, $q);
 if($run_q)
 {
-	echo "done";
+	header('location:../views/register.php?status=success');
 }
 else
 {
