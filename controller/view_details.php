@@ -47,7 +47,15 @@ if(mysqli_num_rows($select) > 0)
                      <h5><?php echo $latest_news['title'];  ?></h5>
                    </div>
                    <p class="text-muted">
+                     <div class="col-md-12">
+                     <div class="col-md-2">
+                      <img src="../uploads/<?php echo $latest_news['photo']; ?>">
+                     </div>
+                     <div class="col-md-8">
                       <?php echo $latest_news['content']; ?>
+                     </div>
+                     </div>
+                     
                    </p>
                    <p><strong>Author:</strong>
                      <?php echo $latest_news['author']; ?>

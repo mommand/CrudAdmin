@@ -9,7 +9,7 @@ include('../controller/auth.php');
 	<?php
       
       include('../config/mysqliConnect.php');
-	  include('assets.php');
+	    include('assets.php');
 	 
 	?>
 </head>
@@ -34,7 +34,7 @@ include('../controller/auth.php');
      <a href="../controller/logout.php" class="btn btn-primary pull-right">Logout</a>
        <div class="col-md-6 col-md-offset-3">
 
-         <form action="../controller/news_exec.php" method="post">
+         <form action="../controller/news_exec.php" method="post" enctype="multipart/form-data">
          	<div class="row form-group">
          	   <label for="title">Title</label>
          	   <input type="text" class="form-control" name="title">
@@ -67,11 +67,15 @@ include('../controller/auth.php');
          	  	
          	  </select>
          	</div>
-
+          <div class="row form-group">
+            <label>Upload Image:</label>
+            <input type="file" name="file" class="form-control">
+          </div>
          	<div class="row form-group">
          	  <label for="content">Content</label>
          	  <textarea class="form-control" style="width:100%; height:200px;" name="content"></textarea>
          	</div>
+
          	<div class="row">
          	  <input type="submit" value="Publish" class="btn btn-primary btn-lg">
          	</div>

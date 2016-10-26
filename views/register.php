@@ -57,6 +57,7 @@ include('assets.php');
  		<label>Re-type Password:</label>
  		<input type="password" name="rpassword" class="form-control">
  	</div>
+  
  	<div class="row form-group">
  		<input type="submit" value="Register!" class="btn btn-primary">
  	</div>
